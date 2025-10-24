@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV — Kwabena Adu Agyemang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html">Kwabena Adu Agyemang</a>
+      <div class="links">
+        <a href="research.html">Research & Projects</a>
+        <a href="contacts.html">Contact</a>
+        <a href="cv.html" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+    <section class="card">
+      <h1 style="margin-top:0">Opening CV...</h1>
+      <p>If the PDF didn't open automatically, <a class="btn" href="resume.pdf" target="_blank" rel="noopener">click here to open the CV</a>.</p>
+    </section>
+    <footer class="footer">(c) <span id="y"></span> Kwabena Adu Agyemang</footer>
+  </div>
+  <script>
+    window.addEventListener('load', function(){
+      const w = window.open('resume.pdf', '_blank', 'noopener');
+    });
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
