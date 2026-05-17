@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magnetic Bright Points Detection — Kwabena Adu Agyemang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html">Kwabena Adu Agyemang</a>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research &amp; Projects</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="project-hero mbp-theme">
+        <div>
+          <p class="eyebrow">Deep Learning · Solar Image Analysis</p>
+          <h1>Magnetic Bright Points Detection</h1>
+          <p class="hero-lead">
+            A computer vision project for detecting and classifying Magnetic Bright Points (MBPs) in solar
+            photosphere images using CNNs, Tiny ViT, CNN-LSTM, and YOLOv8.
+          </p>
+
+          <div class="project-pill-row">
+            <span class="project-pill maroon">CNN</span>
+            <span class="project-pill maroon">Tiny ViT</span>
+            <span class="project-pill maroon">CNN-LSTM</span>
+            <span class="project-pill maroon">YOLOv8</span>
+            <span class="project-pill maroon">Solar Imaging</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn" href="#presentation">View Presentation</a>
+            <a class="btn secondary" href="#results">See Results</a>
+          </div>
+        </div>
+
+        <div class="hero-preview">
+          <a class="image-link" href="assets/mbp_slides/mbp-slide-02.png" target="_blank" rel="noopener" title="Open full slide">
+            <img src="assets/mbp_slides/mbp-slide-02.png" alt="Magnetic Bright Points problem and motivation slide">
+            <span>Click to view full slide</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="metric-strip mbp-metrics">
+        <article class="metric-tile">
+          <span>Total Frames</span>
+          <strong>3,761</strong>
+        </article>
+        <article class="metric-tile">
+          <span>Annotations</span>
+          <strong>48,713</strong>
+        </article>
+        <article class="metric-tile">
+          <span>Best CNN F1</span>
+          <strong>0.965</strong>
+        </article>
+        <article class="metric-tile">
+          <span>CNN-LSTM F1</span>
+          <strong>0.9983</strong>
+        </article>
+      </section>
+
+      <section class="project-section">
+        <div class="section-kicker">Project Overview</div>
+        <h2>Why MBP detection matters</h2>
+        <p>
+          Magnetic Bright Points are small, high-intensity features in the solar photosphere associated with
+          concentrated magnetic flux. They are linked to solar activity such as solar flares and coronal mass
+          ejections, which can affect satellites and power grids on Earth.
+        </p>
+        <p>
+          This project explores how deep learning can make MBP detection and classification more scalable,
+          reproducible, and measurable than manual or purely physics-based approaches.
+        </p>
+      </section>
+
+      <section class="project-section two-col">
+        <div>
+          <div class="section-kicker">Dataset</div>
+          <h2>Solar image data and labels</h2>
+          <p>
+            The dataset used ROSA G-Band observations from the Dunn Solar Telescope at NMSU across four
+            observation sessions. A tracking algorithm detected MBP candidates, and 1,917 unique tracks were
+            manually labeled as valid or invalid/false positive.
+          </p>
+          <p>
+            The class distribution is imbalanced, with approximately 90% valid MBPs and 10% invalid MBPs,
+            making careful metric selection and weighted training important.
+          </p>
+        </div>
+
+        <aside class="study-card">
+          <h3>Dataset snapshot</h3>
+          <ul>
+            <li>3,761 total frames</li>
+            <li>48,713 MBP annotations</li>
+            <li>500 x 500 px frame size</li>
+            <li>64 x 64 YOLO-format bounding boxes</li>
+            <li>Valid vs. invalid MBP classification</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="project-section" id="results">
+        <div class="section-kicker">Models &amp; Results</div>
+        <h2>Patch classification and full-frame detection</h2>
+        <p>
+          The project compares multiple model families. CNN and Tiny ViT perform patch-level binary
+          classification, CNN-LSTM adds temporal modeling, and YOLOv8 performs full-frame object detection.
+        </p>
+
+        <div class="timeline">
+          <article>
+            <span>Baseline CNN</span>
+            <h3>Best patch classifier</h3>
+            <p>
+              Track-based splitting produced stronger results than date-based splitting, with CNN v2 reaching
+              0.937 accuracy and 0.965 F1 for valid MBPs.
+            </p>
+          </article>
+          <article>
+            <span>Tiny ViT</span>
+            <h3>Transformer comparison</h3>
+            <p>
+              The CNN outperformed the Tiny ViT while using fewer parameters, suggesting that convolutional
+              inductive bias was more useful for this small domain-specific dataset.
+            </p>
+          </article>
+          <article>
+            <span>CNN-LSTM</span>
+            <h3>Temporal model</h3>
+            <p>
+              The temporal model used sequence information and produced very strong results, including 0.9968
+              accuracy and 0.9983 F1 score.
+            </p>
+          </article>
+          <article>
+            <span>YOLOv8</span>
+            <h3>Full-frame detection</h3>
+            <p>
+              YOLOv8 localized and classified MBPs directly from full frames, providing a complementary capability
+              to patch-level classifiers.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="section-kicker">Visual Highlights</div>
+        <h2>Selected slides and model evidence</h2>
+        <p>
+          These screenshots were extracted from the project presentation. Click any slide image to open it in full size.
+        </p>
+
+        <div class="slide-gallery">
+
+          <article class="slide-card wide">
+            <a class="image-link" href="assets/mbp_slides/mbp-slide-02.png" target="_blank" rel="noopener" title="Open full slide">
+              <img src="assets/mbp_slides/mbp-slide-02.png" alt="Problem & Motivation slide from Magnetic Bright Points presentation">
+              <span>Click to view full slide</span>
+            </a>
+            <div class="slide-body">
+              <h3>Problem & Motivation</h3>
+              <p>MBPs are high-intensity solar features linked to solar activity; the project aims to automate detection using labeled solar image data.</p>
+            </div>
+          </article>
+        
+
+          <article class="slide-card">
+            <a class="image-link" href="assets/mbp_slides/mbp-slide-03.png" target="_blank" rel="noopener" title="Open full slide">
+              <img src="assets/mbp_slides/mbp-slide-03.png" alt="Dataset slide from Magnetic Bright Points presentation">
+              <span>Click to view full slide</span>
+            </a>
+            <div class="slide-body">
+              <h3>Dataset</h3>
+              <p>The dataset includes 3,761 frames and 48,713 MBP annotations from ROSA G-Band observations.</p>
+            </div>
+          </article>
+        
+
+          <article class="slide-card">
+            <a class="image-link" href="assets/mbp_slides/mbp-slide-04.png" target="_blank" rel="noopener" title="Open full slide">
+              <img src="assets/mbp_slides/mbp-slide-04.png" alt="Baseline CNN slide from Magnetic Bright Points presentation">
+              <span>Click to view full slide</span>
+            </a>
+            <div class="slide-body">
+              <h3>Baseline CNN</h3>
+              <p>A track-based CNN split produced stronger and more stable performance than the date-based split.</p>
+            </div>
+          </article>
+        
+
+          <article class="slide-card">
+            <a class="image-link" href="assets/mbp_slides/mbp-slide-05.png" target="_blank" rel="noopener" title="Open full slide">
+              <img src="assets/mbp_slides/mbp-slide-05.png" alt="Tiny Vision Transformer slide from Magnetic Bright Points presentation">
+              <span>Click to view full slide</span>
+            </a>
+            <div class="slide-body">
+              <h3>Tiny Vision Transformer</h3>
+              <p>A Tiny ViT was compared against the CNN to test whether global attention helped on this small domain-specific dataset.</p>
+            </div>
+          </article>
+        
+
+          <article class="slide-card">
+            <a class="image-link" href="assets/mbp_slides/mbp-slide-07.png" target="_blank" rel="noopener" title="Open full slide">
+              <img src="assets/mbp_slides/mbp-slide-07.png" alt="Temporal CNN-LSTM slide from Magnetic Bright Points presentation">
+              <span>Click to view full slide</span>
+            </a>
+            <div class="slide-body">
+              <h3>Temporal CNN-LSTM</h3>
+              <p>The temporal model uses sequential information and achieved strong classification metrics.</p>
+            </div>
+          </article>
+        
+
+          <article class="slide-card">
+            <a class="image-link" href="assets/mbp_slides/mbp-slide-08.png" target="_blank" rel="noopener" title="Open full slide">
+              <img src="assets/mbp_slides/mbp-slide-08.png" alt="Full-Frame YOLOv8 Detection slide from Magnetic Bright Points presentation">
+              <span>Click to view full slide</span>
+            </a>
+            <div class="slide-body">
+              <h3>Full-Frame YOLOv8 Detection</h3>
+              <p>YOLOv8 detects and classifies MBPs from full 500x500 frames, complementing the patch classifiers.</p>
+            </div>
+          </article>
+        
+
+          <article class="slide-card wide">
+            <a class="image-link" href="assets/mbp_slides/mbp-slide-09.png" target="_blank" rel="noopener" title="Open full slide">
+              <img src="assets/mbp_slides/mbp-slide-09.png" alt="Cross-Model Comparison slide from Magnetic Bright Points presentation">
+              <span>Click to view full slide</span>
+            </a>
+            <div class="slide-body">
+              <h3>Cross-Model Comparison</h3>
+              <p>The comparison summarizes CNN, ViT, CNN-LSTM, and YOLOv8 across their respective tasks.</p>
+            </div>
+          </article>
+        
+
+          <article class="slide-card wide">
+            <a class="image-link" href="assets/mbp_slides/mbp-slide-10.png" target="_blank" rel="noopener" title="Open full slide">
+              <img src="assets/mbp_slides/mbp-slide-10.png" alt="Conclusion & Future Work slide from Magnetic Bright Points presentation">
+              <span>Click to view full slide</span>
+            </a>
+            <div class="slide-body">
+              <h3>Conclusion & Future Work</h3>
+              <p>The project highlights the value of track-based splitting, class imbalance handling, and future two-stage detection-classification pipelines.</p>
+            </div>
+          </article>
+        
+        </div>
+      </section>
+
+      <section class="project-section" id="presentation">
+        <div class="section-kicker">Presentation</div>
+        <h2>Full Project Presentation</h2>
+   
+
+
+        <div class="pdf-frame compact" style="margin-top:18px">
+          <iframe
+            src="assets/mbp-miners-presentation.pdf#toolbar=1&navpanes=0"
+            title="Magnetic Bright Points Detection project presentation">
+          </iframe>
+        </div>
+
+        <div class="project-link-row">
+          <a class="btn" href="assets/mbp-miners-presentation.pdf" target="_blank" rel="noopener">Open PDF Presentation</a>
+          <a class="btn secondary" href="assets/mbp-miners-presentation.pptx" target="_blank" rel="noopener">Download PPTX</a>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="section-kicker">Reflection</div>
+        <h2>What the project shows</h2>
+        <p>
+          The strongest lesson from this work is that model performance depends not only on architecture but also
+          on data splitting, class imbalance handling, and the difference between classification and detection tasks.
+          The project also suggests future work combining YOLO detection with CNN or ViT classification as a two-stage
+          pipeline.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">© <span id="y"></span> Kwabena Adu Agyemang</footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

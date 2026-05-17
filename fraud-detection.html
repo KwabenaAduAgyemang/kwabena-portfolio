@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI-Based Anomaly Detection — Kwabena Adu Agyemang</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <nav class="nav">
+      <a class="brand" href="index.html">Kwabena Adu Agyemang</a>
+      <div class="links">
+        <a href="index.html">Home</a>
+        <a href="research.html">Research &amp; Projects</a>
+        <a href="contacts.html">Contacts</a>
+        <a href="resume.pdf" target="_blank" rel="noopener">CV</a>
+      </div>
+    </nav>
+
+    <main>
+      <section class="project-hero">
+        <div>
+          <p class="eyebrow">AI Project · Fraud Monitoring</p>
+          <h1>AI-Based Anomaly Detection for Financial Fraud Monitoring</h1>
+          <p class="hero-lead">
+            A hybrid AI system that uses an autoencoder to learn normal transaction behavior and
+            hill climbing to optimize the fraud decision threshold.
+          </p>
+
+          <div class="project-pill-row">
+            <span class="project-pill">Autoencoder</span>
+            <span class="project-pill">Anomaly Detection</span>
+            <span class="project-pill">Hill Climbing</span>
+            <span class="project-pill">Financial Fraud</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn" href="#demo">View Demo</a>
+            <a class="btn secondary" href="#results">See Results</a>
+            <a class="btn secondary" href="#presentation">View Presentation</a>
+          </div>
+        </div>
+
+        <div class="hero-preview">
+          <a class="image-link" href="assets/fraud-demo-app.png" target="_blank" rel="noopener" title="Open full image">
+            <img src="assets/fraud-demo-app.png" alt="AI-based anomaly detection web demo">
+            <span>Click to view full image</span>
+          </a>
+        </div>
+      </section>
+
+      <section class="metric-strip" id="results">
+        <article class="metric-tile">
+          <span>Accuracy</span>
+          <strong>0.99</strong>
+        </article>
+        <article class="metric-tile">
+          <span>Precision</span>
+          <strong>0.55</strong>
+        </article>
+        <article class="metric-tile">
+          <span>Recall</span>
+          <strong>0.79</strong>
+        </article>
+        <article class="metric-tile">
+          <span>F1 Score</span>
+          <strong>0.65</strong>
+        </article>
+      </section>
+
+      <section class="project-section">
+        <div class="section-kicker">Problem</div>
+        <h2>Why this project matters</h2>
+        <p>
+          Online financial transactions are increasing rapidly, and traditional rule-based fraud detection
+          systems can struggle to detect new or unusual fraud patterns. This project explores how deep learning
+          and search optimization can work together to flag suspicious transactions more adaptively.
+        </p>
+        <p>
+          The goal was to develop a system that classifies selected transactions as <strong>Fraud</strong> or
+          <strong>No Fraud</strong> using reconstruction error and an optimized threshold.
+        </p>
+      </section>
+
+      <section class="project-section">
+        <div class="section-kicker">Approach</div>
+        <h2>Hybrid AI Pipeline</h2>
+        <p>
+          The autoencoder learns patterns from normal financial transactions. When a transaction is difficult
+          for the autoencoder to reconstruct, it receives a higher reconstruction error, which becomes the anomaly
+          score. Hill climbing then searches for a threshold that improves the F1 score.
+        </p>
+
+        <div class="workflow">
+          <div>Data<span>Transactions</span></div>
+          <div>Autoencoder<span>Learn normal behavior</span></div>
+          <div>Error<span>Anomaly score</span></div>
+          <div>Hill Climbing<span>Find threshold</span></div>
+          <div>Decision<span>Fraud / No Fraud</span></div>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="section-kicker">Results</div>
+        <h2>Baseline vs. Optimized Model</h2>
+        <p>
+          Optimization improved the model’s balance between false alarms and missed fraud. The optimized model
+          increased precision and F1 score, while recall remained relatively strong.
+        </p>
+
+        <div class="figure-grid">
+          <article class="figure-card wide">
+            <a class="image-link" href="assets/fraud-metrics-comparison.png" target="_blank" rel="noopener">
+              <img src="assets/fraud-metrics-comparison.png" alt="Baseline vs optimized model metrics bar chart">
+              <span>Click to view full image</span>
+            </a>
+            <div class="figure-body">
+              <h3>Model Performance Comparison</h3>
+              <p>
+                The optimized model improves accuracy, precision, and F1 score compared with the baseline model.
+              </p>
+            </div>
+          </article>
+
+          <article class="figure-card">
+            <a class="image-link" href="assets/fraud-metrics-line.png" target="_blank" rel="noopener">
+              <img src="assets/fraud-metrics-line.png" alt="Performance comparison line plot">
+              <span>Click to view full image</span>
+            </a>
+            <div class="figure-body">
+              <h3>Performance Trend</h3>
+              <p>
+                The line plot highlights how optimization changes each metric across accuracy, precision, recall,
+                and F1 score.
+              </p>
+            </div>
+          </article>
+
+          <article class="figure-card">
+            <a class="image-link" href="assets/fraud-precision-recall.png" target="_blank" rel="noopener">
+              <img src="assets/fraud-precision-recall.png" alt="Precision recall curve">
+              <span>Click to view full image</span>
+            </a>
+            <div class="figure-body">
+              <h3>Precision–Recall Curve</h3>
+              <p>
+                This curve shows the trade-off between detecting fraud and reducing false alarms across thresholds.
+              </p>
+            </div>
+          </article>
+
+          <article class="figure-card">
+            <a class="image-link" href="assets/fraud-threshold-f1.png" target="_blank" rel="noopener">
+              <img src="assets/fraud-threshold-f1.png" alt="Threshold optimization using hill climbing">
+              <span>Click to view full image</span>
+            </a>
+            <div class="figure-body">
+              <h3>Threshold Optimization</h3>
+              <p>
+                Hill climbing searches for a threshold that maximizes the F1 score.
+              </p>
+            </div>
+          </article>
+
+          <article class="figure-card">
+            <a class="image-link" href="assets/fraud-error-boxplot.png" target="_blank" rel="noopener">
+              <img src="assets/fraud-error-boxplot.png" alt="Error distribution by class boxplot">
+              <span>Click to view full image</span>
+            </a>
+            <div class="figure-body">
+              <h3>Error Distribution by Class</h3>
+              <p>
+                Fraud transactions generally show larger reconstruction errors than normal transactions.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+
+      <section class="project-section" id="presentation">
+        <div class="section-kicker">Presentation</div>
+        <h2>Project Presentation</h2>
+        <p>
+          The embedded slide deck below presents the full project summary, including the problem statement,
+          solution pipeline, autoencoder approach, hill climbing optimization, model results, ethics,
+          reflections, and team contributions.
+        </p>
+
+        <div class="pdf-frame">
+          <iframe
+            src="assets/ai-based-anomaly-detection.pdf#toolbar=1&navpanes=0"
+            title="AI-Based Anomaly Detection project presentation">
+          </iframe>
+        </div>
+
+        <div class="project-link-row">
+          <a class="btn" href="assets/ai-based-anomaly-detection.pdf" target="_blank" rel="noopener">
+            Open Full Presentation
+          </a>
+        </div>
+      </section>
+
+      <section class="project-section" id="demo">
+        <div class="section-kicker">Demo</div>
+        <h2>Interactive Web Demo</h2>
+        <p>
+          I also built a browser-based demo that loads real transaction rows, runs the anomaly detection pipeline,
+          compares the reconstruction error to the learned threshold, and displays a fraud/no-fraud decision.
+        </p>
+
+        <div class="figure-card wide">
+          <a class="image-link" href="assets/fraud-demo-app.png" target="_blank" rel="noopener">
+            <img src="assets/fraud-demo-app.png" alt="AI fraud monitoring demo interface">
+            <span>Click to view full image</span>
+          </a>
+          <div class="figure-body">
+            <h3>Demo Interface</h3>
+            <p>
+              The interface summarizes the model decision, reconstruction error, threshold comparison,
+              model metrics, and selected transaction features.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-link-row">
+          <a class="btn" href="assets/ai-based-anomaly-detection.pdf" target="_blank" rel="noopener">Open Slides</a>
+          <a class="btn secondary" href="assets/fraud-project-notebook.ipynb" target="_blank" rel="noopener">Open Notebook</a>
+        </div>
+      </section>
+
+      <section class="project-section">
+        <div class="section-kicker">Reflection</div>
+        <h2>What I learned</h2>
+        <p>
+          This project showed why accuracy alone can be misleading in fraud detection. A model can appear highly
+          accurate while still performing poorly on the minority fraud class. Using F1 score as the optimization
+          target helped balance precision and recall, while the demo made the pipeline easier to explain to a
+          non-technical audience.
+        </p>
+      </section>
+    </main>
+
+    <footer class="footer">© <span id="y"></span> Kwabena Adu Agyemang</footer>
+  </div>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

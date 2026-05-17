@@ -3,49 +3,239 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>HCC Project — Kwabena Adu Agyemang</title>
+  <title>Pocket Polls — HCC Course Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
   <div class="container">
     <nav class="nav">
       <a class="brand" href="index.html">Kwabena Adu Agyemang</a>
       <div class="links">
-        <a href="research.html">Research & Projects</a>
+        <a href="index.html">Home</a>
+        <a href="research.html">Research &amp; Projects</a>
         <a href="contacts.html">Contacts</a>
         <a href="resume.pdf" target="_blank" rel="noopener">CV</a>
       </div>
     </nav>
 
-    <section class="card">
-      <h1 style="margin-top:0">HCC Course Project</h1>
-      <p style="color:var(--muted)">This page is under progress.</p>
-      <h2>Motivation</h2>
-      <p>xxxxxxxx</p>
+    <main>
+      <section class="project-hero">
+        <div>
+          <p class="eyebrow">HCC Course Project</p>
+          <h1>Pocket Polls</h1>
+          <p class="hero-lead">
+            A live classroom polling and Q&amp;A system that helps presenters collect audience questions,
+            manage participation, and display live responses in real time.
+          </p>
 
-      <h2>Online Study</h2>
-      <p>xxxxxx.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#demo">Watch Demo</a>
+            <a class="btn secondary" href="#prototype">View Prototype</a>
+          </div>
+        </div>
 
-      <h2>Prototyping Phase</h2>
-      <p>xxxxxx.</p>
+        <div class="hero-preview">
+          <a class="image-link" href="assets/pocketpolls-host.png" target="_blank" rel="noopener" title="Open full image">
+            <img src="assets/pocketpolls-host.png" alt="Pocket Polls presenter interface showing PIN, QR code, and live questions">
+            <span>Click to view full image</span>
+          </a>
+        </div>
+      </section>
 
-      <h2>User Studies — Round 1 & 2 Results</h2>
-      <ul>
-        <li>xxxxx</li>
-        <li>xxxxx</li>
-        <li>xxxxx/li>
-      </ul>
+      <section class="mini-stats">
+        <article>
+          <span>01</span>
+          <strong>Host Dashboard</strong>
+          <p>Control the event, publish questions, open/close polls, and reset votes.</p>
+        </article>
+        <article>
+          <span>02</span>
+          <strong>Participant Join</strong>
+          <p>Students join by PIN or QR code, submit questions, and upvote existing ones.</p>
+        </article>
+        <article>
+          <span>03</span>
+          <strong>Presenter View</strong>
+          <p>A clean live display for classroom screens and presentation settings.</p>
+        </article>
+      </section>
 
-      <h2 style="display:flex;align-items:center;gap:8px">Demo (GIF or short video)</h2>
-      <p>Add a <code>.gif</code> or an embedded video (≤ 30s) showing the app working.</p>
-      <div class="card" style="margin:0;text-align:center">
-        <em>Demo placeholder — replace with your GIF or video.</em>
-      </div>
-    </section>
+      <section class="project-section">
+        <div class="section-kicker">Problem &amp; Design Goal</div>
+        <h2>Motivation</h2>
+        <p>
+          In many classroom and presentation settings, students may hesitate to ask questions publicly,
+          especially in large groups or fast-paced sessions. Pocket Polls was designed to make participation
+          easier, faster, and more inclusive by allowing participants to submit and upvote questions from
+          their own devices.
+        </p>
+        <p>
+          The goal is to help presenters quickly understand what the audience needs most and respond to the
+          highest-priority questions in real time.
+        </p>
+      </section>
 
-    
+      <section class="project-section two-col">
+        <div>
+          <div class="section-kicker">Study Setup</div>
+          <h2>Online Study</h2>
+          <p>
+            The project supports an online or hybrid study where participants access a join page through a
+            shared link, QR code, or event PIN. Once connected, they can submit questions and upvote questions
+            already posted by others.
+          </p>
+          <p>
+            The host dashboard tracks live activity, while the presenter view displays the PIN, QR code, and
+            audience questions. This setup allows us to examine how live question submission and voting support
+            engagement and presenter-audience communication.
+          </p>
+        </div>
+
+        <aside class="study-card">
+          <h3>What the study observes</h3>
+          <ul>
+            <li>Can participants join without confusion?</li>
+            <li>Can they submit and upvote questions easily?</li>
+            <li>Does the presenter receive clearer audience feedback?</li>
+            <li>Does the tool reduce pressure to speak publicly?</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section class="project-section" id="prototype">
+        <div class="section-kicker">Prototype</div>
+        <h2>Interfaces</h2>
+        <p>
+          Pocket Polls is organized around a simple workflow: the host manages the session, participants join
+          and contribute questions, and the presenter view displays what is live.
+        </p>
+
+        <p class="screen-note">The screenshots below show each interface. </p>
+
+        <div class="showcase-grid">
+          <article class="showcase-card wide">
+            <a class="image-link" href="assets/pocketpolls-host.png" target="_blank" rel="noopener" title="Open full image">
+              <img src="assets/pocketpolls-host.png" alt="Pocket Polls host dashboard">
+              <span>Click to view full image</span>
+            </a>
+            <div>
+              <span class="tag">Host</span>
+              <h3>Host Dashboard</h3>
+              <p>
+                The host controls the live session from one dashboard: create a Q&amp;A question, load recent polls,
+                publish selected questions, close the poll, and reset votes when needed.
+              </p>
+            </div>
+          </article>
+
+          <article class="showcase-card wide">
+            <a class="image-link" href="assets/pocketpolls-presenter.png" target="_blank" rel="noopener" title="Open full image">
+              <img src="assets/pocketpolls-presenter.png" alt="Pocket Polls presenter view">
+              <span>Click to view full image</span>
+            </a>
+            <div>
+              <span class="tag">Presenter</span>
+              <h3>Presenter View</h3>
+              <p>
+                A screen-friendly view shows the event PIN, QR code, and live audience questions for the room.
+              </p>
+            </div>
+          </article>
+
+          <article class="showcase-card phone-shot">
+            <a class="image-link" href="assets/pocketpolls-join-mobile.png" target="_blank" rel="noopener" title="Open full image">
+              <img src="assets/pocketpolls-join-mobile.png" alt="Pocket Polls mobile join page">
+              <span>Click to view full image</span>
+            </a>
+            <div>
+              <span class="tag">Mobile</span>
+              <h3>Mobile Participant View</h3>
+              <p>
+                Participants can join using the event PIN, submit questions, and upvote the most useful questions.
+              </p>
+            </div>
+          </article>
+
+          <article class="showcase-card wide">
+            <a class="image-link" href="assets/pocketpolls-join-desktop.png" target="_blank" rel="noopener" title="Open full image">
+              <img src="assets/pocketpolls-join-desktop.png" alt="Pocket Polls desktop participant view">
+              <span>Click to view full image</span>
+            </a>
+            <div>
+              <span class="tag">Desktop</span>
+              <h3>Desktop Participant View</h3>
+              <p>
+                The interaction also works on desktop, making the tool flexible for in-person, hybrid, and online use.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-section two-col">
+        <div>
+          <div class="section-kicker">Evaluation</div>
+          <h2>User Studies — Round 1 &amp; 2 Results</h2>
+          <p>
+            The user studies focused on whether the system’s core workflow was understandable: joining a poll,
+            submitting a question, upvoting, and viewing live questions as the presenter.
+          </p>
+        </div>
+
+        <div class="timeline">
+          <article>
+            <span>Round 1</span>
+            <h3>Core interaction testing</h3>
+            <p>
+              Initial testing focused on whether users could join with a PIN, submit a question, and understand
+              the upvote interaction.
+            </p>
+          </article>
+          <article>
+            <span>Round 2</span>
+            <h3>Refinement and clarity</h3>
+            <p>
+              The design was refined to make host controls clearer, improve participant layout, and make the
+              presenter view easier to read during live use.
+            </p>
+          </article>
+          <article>
+            <span>Takeaway</span>
+            <h3>Participation made easier</h3>
+            <p>
+              Pocket Polls supports real-time audience participation by reducing the pressure of speaking publicly
+              and giving presenters a clearer view of the most important audience questions.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="project-section" id="demo">
+        <div class="section-kicker">Demo</div>
+        <h2>Short Video Demo</h2>
+        <p>
+          The demo shows the complete Pocket Polls workflow: the host creates or loads a poll, participants join
+          using a PIN, submit questions, upvote existing questions, and the presenter view updates with live
+          audience activity.
+        </p>
+
+        <div class="demo-frame">
+          <video controls preload="metadata" poster="assets/pocketpolls-presenter.png">
+            <source src="assets/pocketpolls-demo.mp4" type="video/mp4">
+            Your browser does not support the video tag. Add your video file as
+            assets/pocketpolls-demo.mp4.
+          </video>
+
+        </div>
+      </section>
+    </main>
+
     <footer class="footer">© <span id="y"></span> Kwabena Adu Agyemang</footer>
   </div>
-  <script>document.getElementById('y').textContent = new Date().getFullYear()</script>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
